@@ -25,6 +25,14 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use('/', index);
 app.use('/api', tasks);
 
+// app.use((err, req, res, next) =>{
+//     console.log(err.stack || err.message);
+//     if(res.headerSent){
+//         return next(err);
+//     }
+//     res.status(500).send('Internal Server Error');
+// });
+
 app.listen(port, function(){
     console.log('Server started on port ' + port);
 });
